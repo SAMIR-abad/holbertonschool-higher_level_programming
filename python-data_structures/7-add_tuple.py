@@ -12,4 +12,4 @@ def add_tuple(tuple_a=(), tuple_b=()):
         else:
             value_b = tuple_b[idx]
         result.append(value_a + value_b)
-    return result
+    return tuple(result)
