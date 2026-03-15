@@ -2,14 +2,9 @@
 def add_tuple(tuple_a=(), tuple_b=()):
     length = max(len(tuple_a), len(tuple_b))
     result = list()
-    for idx in range(length):
-        if idx > len(tuple_a) - 1:
-            value_a = 0
-        else:
-            value_a = tuple_a[idx]
-        if idx > len(tuple_b) - 1:
-            value_b = 0
-        else:
-            value_b = tuple_b[idx]
-        result.append(value_a + value_b)
+    for i in range(length):
+        val_a = tuple_a[i] if i < len(tuple_a) else 0
+        val_b = tuple_b[i] if i < len(tuple_b) else 0
+        result.append(val_a + val_b)
+
     return tuple(result)
