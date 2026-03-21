@@ -5,4 +5,7 @@ def only_diff_elements(set_1, set_2):
     for el_1 in lst_1:
         if not el_1 in lst_2:
             result.append(el_1)
+    for el_2 in lst_2:
+        if not el_2 in lst_1:
+            result.append(el_2)
     return set(result)
