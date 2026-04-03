@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-class Rectangle:
+class Square():
     """This class defines a rectangle by
     its properties and future behaviors."""
     pass
