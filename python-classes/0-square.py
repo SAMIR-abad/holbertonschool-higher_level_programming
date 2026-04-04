@@ -3,5 +3,5 @@
 
 
 class Square:
-    """This class defines a square by its properties and future 
+    """This class defines a square by its properties and future"""
     pass
