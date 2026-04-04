@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-if __name__ = "__main__":
-    class Square():
-        """This class defines a rectangle by
-        its properties and future behaviors."""
-        pass
+"""This module defines a Square class that represents a square shape."""
+
+
+class Square:
+    """This class defines a square by its properties and future 
+    pass
