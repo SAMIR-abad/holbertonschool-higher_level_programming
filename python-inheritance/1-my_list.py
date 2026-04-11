@@ -1,15 +1,10 @@
 #!/usr/bin/python3
-"""
-This module contains the MyList class.
-"""
+"""MyList modulu"""
 
 
 class MyList(list):
-    """A class that inherits from list."""
+    """list sinfindən miras alan MyList sinfi"""
 
     def print_sorted(self):
-        """
-        Prints the list elements in ascending order.
-        Assumes all elements in the list are integers.
-        """
+        """Siyahını artan sıra ilə çap edir"""
         print(sorted(self))
