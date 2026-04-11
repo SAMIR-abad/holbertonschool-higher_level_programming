@@ -1,10 +1,16 @@
 #!/usr/bin/python3
-"""MyList modulu"""
+"""
+Bu modul MyList sinfini təyin edir.
+"""
 
 
 class MyList(list):
-    """list sinfindən miras alan MyList sinfi"""
+    """
+    Siyahı obyektindən miras alan və əlavə funksionallığı olan sinif.
+    """
 
     def print_sorted(self):
-        """Siyahını artan sıra ilə çap edir"""
+        """
+        Siyahıdakı tam ədədləri artan sıra ilə çap edir.
+        """
         print(sorted(self))
