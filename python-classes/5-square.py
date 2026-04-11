@@ -32,10 +32,7 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Kvadratı '#' simvolları ilə standart çıxışa çap edir.
-        
-        Əgər ölçü (size) 0-a bərabərdirsə, sadəcə boş bir sətir çap edir.
-        """
+        """Kvadratı '#' simvolları ilə standart çıxışa çap edir."""
         if self.__size == 0:
             print("")
             return
