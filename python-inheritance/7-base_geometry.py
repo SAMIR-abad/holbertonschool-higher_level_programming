@@ -10,12 +10,7 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Tam ədədləri yoxlayır.
-
-        Args:
-            name (str): Parametrin adı.
-            value (int): Yoxlanılacaq dəyər.
-        """
+        """Tam ədədləri yoxlayır"""
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
