@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Boş BaseGeometry sinfini təyin edən modul."""
+"""AAAAAAAAAAa"""
 
 class BaseGeometry:
-    """Hələlik boş olan təməl həndəsə sinfi."""
+    """AAAAAAAAAAa"""
     pass
