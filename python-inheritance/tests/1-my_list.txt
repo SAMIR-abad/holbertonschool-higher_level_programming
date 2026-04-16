@@ -1,18 +1,27 @@
->>> MyList = __import__('1-my_list').MyList
->>> my_list = MyList()
->>> # Boş siyahı testi
->>> my_list.print_sorted()
-[]
->>> # Müsbət və mənfi ədədlərlə test
->>> my_list.append(1)
->>> my_list.append(-4)
->>> my_list.append(2)
->>> my_list.append(-3)
->>> my_list.append(5)
->>> print(my_list)
-[1, -4, 2, -3, 5]
->>> my_list.print_sorted()
-[-4, -3, 1, 2, 5]
->>> # Orijinal siyahının dəyişmədiyini yoxlayırıq
->>> print(my_list)
-[1, -4, 2, -3, 5]
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+>>> # area() metodunun Exception atdığını yoxlayırıq
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+>>> # integer_validator testləri
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+    ...
+ValueError: distance must be greater than 0
