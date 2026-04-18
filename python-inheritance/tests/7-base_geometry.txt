@@ -1,23 +1,24 @@
+The ``BaseGeometry`` class
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
->>> # area() metodunu yoxlayırıq
+>>> # area() metodunun yoxlanışı
 >>> bg.area()
 Traceback (most recent call last):
     ...
 Exception: area() is not implemented
 
->>> # Düzgün integer-lər (heç nə çap etməməlidir)
+>>> # integer_validator: Düzgün işləməsi
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
->>> # TypeError: Səhv tiplər
+>>> # integer_validator: TypeError (Səhv tiplər)
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
     ...
 TypeError: name must be an integer
 
->>> bg.integer_validator("age", [1, 2, 3])
+>>> bg.integer_validator("age", 1.5)
 Traceback (most recent call last):
     ...
 TypeError: age must be an integer
@@ -27,13 +28,18 @@ Traceback (most recent call last):
     ...
 TypeError: is_active must be an integer
 
->>> # ValueError: 0 və ya mənfi ədədlər
+>>> bg.integer_validator("none_val", None)
+Traceback (most recent call last):
+    ...
+TypeError: none_val must be an integer
+
+>>> # integer_validator: ValueError (0 və mənfi ədədlər)
 >>> bg.integer_validator("width", 0)
 Traceback (most recent call last):
     ...
 ValueError: width must be greater than 0
 
->>> bg.integer_validator("height", -5)
+>>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
     ...
-ValueError: height must be greater than 0
+ValueError: distance must be greater than 0
