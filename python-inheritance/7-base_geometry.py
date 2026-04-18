@@ -1,17 +1,21 @@
 #!/usr/bin/python3
-"""BaseGeometry sinfi üçün modul."""
+"""BaseGeometry modulu."""
 
 
 class BaseGeometry:
-    """Həndəsə fiqurları üçün təməl sinif."""
+    """Həndəsə üçün baza sinfi."""
 
     def area(self):
-        """Sahəni hesablayır (hələlik tətbiq edilməyib)."""
+        """Hələlik tətbiq edilməyib."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Tam ədədləri yoxlayır"""
-        if not isinstance(value, int):
+        """Dəyərin tam ədəd və 0-dan böyük olmasını yoxlayır.
+        
+        Qeyd: type() istifadə edirik, çünki isinstance(True, int) True qaytarır,
+        amma biz boolean-ları qəbul etməməliyik.
+        """
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
