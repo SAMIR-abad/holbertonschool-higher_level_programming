@@ -1,24 +1,28 @@
-Parameter is not an integer:
-  >>> bg = __import__('7-base_geometry_2').BaseGeometry
-  >>> bg.integer_validator("value", "str")
-  Traceback (most recent call last):
-    ...
-  TypeError: value must be an integer
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
 
-Parameter is less than 0:
-  >>> bg = __import__('7-base_geometry_2').BaseGeometry
-  >>> bg.integer_validator("value", -1)
-  Traceback (most recent call last):
-    ...
-  ValueError: value must be greater than 0
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
 
-Parameter is 0:
-  >>> bg = __import__('7-base_geometry_2').BaseGeometry
-  >>> bg.integer_validator("value", 0)
-  Traceback (most recent call last):
-    ...
-  ValueError: value must be greater than 0
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
 
-Valid parameters:
-  >>> bg = __import__('7-base_geometry_2').BaseGeometry
-  >>> bg.integer_validator("value", 25)
+>>> try:
+...     bg.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] distance must be greater than 0
+
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
