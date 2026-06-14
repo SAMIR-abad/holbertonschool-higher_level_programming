@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """URL-ə email parametrilə POST sorğusu göndərən və cavabı çap edən modul."""
 import sys
 import urllib.parse
