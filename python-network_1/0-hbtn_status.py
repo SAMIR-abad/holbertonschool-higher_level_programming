@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """urllib kitabxanası ilə verilmiş URL-dən status məlumatını götürən modul."""
 import urllib.request
 
