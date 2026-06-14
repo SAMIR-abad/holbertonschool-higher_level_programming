@@ -5,7 +5,7 @@ from flask_httpauth import HTTPBasicAuth
 from flask_jwt_extended import (
     JWTManager, create_access_token, jwt_required, get_jwt_identity
 )
-from werkzeug.security import generate_password_hash, verify_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = "super-secret-key-change-in-production"
@@ -30,7 +30,7 @@ users = {
 def verify_password(username, password):
     """Basic Auth üçün istifadəçi adı və şifrəni təsdiqləyir."""
     user = users.get(username)
-    if user and verify_password_hash(user["password"], password):
+    if user and check_password_hash(user["password"], password):
         return user
     return None
 
@@ -46,7 +46,7 @@ def login():
     if not username or not password:
         return jsonify({"error": "Username and password required"}), 400
     user = users.get(username)
-    if not user or not verify_password_hash(user["password"], password):
+    if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Bad username or password"}), 401
     access_token = create_access_token(identity=user)
     return jsonify({"access_token": access_token}), 200
