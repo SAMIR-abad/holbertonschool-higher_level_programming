@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """URL-ə sorğu göndərən və X-Request-Id başlıq dəyərini çap edən modul."""
 import sys
 import urllib.request
