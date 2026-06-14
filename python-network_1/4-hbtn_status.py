@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""requests kitabxanası ilə verilmiş URL-dən status məlumatını götürən modul."""
+"""requests ilə verilmiş URL-dən statusu götürən modul."""
 import requests
 
 if __name__ == "__main__":
